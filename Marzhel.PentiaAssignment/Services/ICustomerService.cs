@@ -14,10 +14,10 @@ namespace Marzhel.PentiaAssignment.Services
 
         Task<ICollection<Customer>> GetByStreetAsync(string street);
 
-        Task<ICollection<Customer>> GetByCarModel(string carModel);
+        Task<ICollection<Customer>> GetByCarModelAsync(string carModel);
 
-        Task<ICollection<Customer>> GetByCarMake(string carMake);
+        Task<ICollection<Customer>> GetByCarMakeAsync(string carMake);
 
-        Task<ICollection<Customer>> GetBySalesPersonName(string salesPersonName);
+        Task<ICollection<Customer>> GetBySalesPersonNameAsync(string salesPersonName);
     }
 }

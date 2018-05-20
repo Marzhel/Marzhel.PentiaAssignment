@@ -42,7 +42,7 @@ namespace Marzhel.PentiaAssignment.Services
             return await query.ToListAsync();
         }
 
-        public async Task<ICollection<Customer>> GetByCarMake(string carMake)
+        public async Task<ICollection<Customer>> GetByCarMakeAsync(string carMake)
         {
             var query = from purchase in _salesContext.CarPurchases
                         where purchase.Car.Make == carMake
@@ -51,7 +51,7 @@ namespace Marzhel.PentiaAssignment.Services
             return await query.ToListAsync();
         }
 
-        public async Task<ICollection<Customer>> GetByCarModel(string carModel)
+        public async Task<ICollection<Customer>> GetByCarModelAsync(string carModel)
         {
             var query = from purchase in _salesContext.CarPurchases
                         where purchase.Car.Model == carModel
@@ -69,7 +69,7 @@ namespace Marzhel.PentiaAssignment.Services
             return await query.ToListAsync();
         }
 
-        public async Task<ICollection<Customer>> GetBySalesPersonName(string salesPersonName)
+        public async Task<ICollection<Customer>> GetBySalesPersonNameAsync(string salesPersonName)
         {
             var query = from purchase in _salesContext.CarPurchases
                         where purchase.SalesPerson.Name == salesPersonName
