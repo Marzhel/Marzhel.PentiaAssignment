@@ -6,13 +6,21 @@
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<ul>
+    <li>@Html.ActionLink("Sarch by name", "ByName")</li>
+    <li>@Html.ActionLink("Sarch by street", "ByStreet")</li>
+    <li>@Html.ActionLink("Sarch by purchase of car make", "ByPurchaseOfCarMake")</li>
+    <li>@Html.ActionLink("Sarch by purchase of car model", "ByPurchaseOfCarModel")</li>
+    <li>@Html.ActionLink("Sarch by name of sales person", "BySalesPersonName")</li>
+</ul>
+
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Address)
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Surname)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Birthday)
@@ -21,10 +29,7 @@
             @Html.DisplayNameFor(model => model.Created)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Surname)
+            Car purchases
         </th>
         <th></th>
     </tr>
@@ -33,7 +38,10 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Address)
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Surname)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Birthday)
@@ -42,10 +50,7 @@
                 @Html.DisplayFor(modelItem => item.Created)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Surname)
+                @Html.DisplayFor(modelItem => item.CarPurchases.Count)
             </td>
             <td>
                 @Html.ActionLink("Details", "Details", new { id = item.CustomerId })

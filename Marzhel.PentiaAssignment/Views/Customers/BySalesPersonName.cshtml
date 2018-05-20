@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Marzhel.PentiaAssignment.Models.Customer>
+
+@{
+    ViewBag.Title = "Search by name of sales person";
+}
+
+<h2>Search by name of sales person</h2>
+
+<form class="form-inline" method="get">
+    <div class="form-group">
+        <label for="searchbox">Name of sales person</label>
+        <input type="text" class="form-control" id="searchbox" name="salesPersonName" placeholder="Anders">
+    </div>
+    <button type="submit" class="btn btn-default">Search</button>
+</form>
+<br />
+
+@Html.Partial("CustomerTable")

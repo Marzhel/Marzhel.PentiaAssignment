@@ -219,6 +219,12 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Customers\ByName.cshtml" />
+    <Content Include="Views\Customers\ByStreet.cshtml" />
+    <Content Include="Views\Customers\ByPurchaseOfCarMake.cshtml" />
+    <Content Include="Views\Customers\ByPurchaseOfCarModel.cshtml" />
+    <Content Include="Views\Customers\BySalesPersonName.cshtml" />
+    <Content Include="Views\Shared\CustomerTable.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
