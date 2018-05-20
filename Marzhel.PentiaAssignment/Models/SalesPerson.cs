@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Marzhel.PentiaAssignment.Models
 {
-    public class SalesPerson
+    public class SalesPerson : BaseEntity
     {
         public Address Address { get; set; }
 
@@ -14,8 +14,6 @@ namespace Marzhel.PentiaAssignment.Models
         public string Name { get; set; }
 
         public decimal Salary { get; set; }
-
-        public int SalesPersonId { get; set; }
 
         #region Navigarion Properties
 

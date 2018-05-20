@@ -3,10 +3,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Marzhel.PentiaAssignment.Models
 {
-    public class Car
+    public class Car : BaseEntity
     {
-        public int CarId { get; set; }
-
         [Required]
         public string Color { get; set; }
 

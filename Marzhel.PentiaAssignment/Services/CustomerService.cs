@@ -30,7 +30,7 @@ namespace Marzhel.PentiaAssignment.Services
 
         public Task<Customer> GetAsync(int id)
         {
-            return _salesContext.Customers.FirstOrDefaultAsync(customer => customer.CustomerId == id);
+            return _salesContext.Customers.FirstOrDefaultAsync(customer => customer.Id == id);
         }
 
         public async Task<ICollection<Customer>> GetByStreetAsync(string street)

@@ -171,6 +171,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\BaseEntity.cs" />
     <Compile Include="Models\Car.cs" />
     <Compile Include="Models\CarExtra.cs" />
     <Compile Include="Models\CarPurchase.cs" />

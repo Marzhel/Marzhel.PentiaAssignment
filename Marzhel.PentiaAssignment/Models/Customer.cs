@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Marzhel.PentiaAssignment.Models
 {
-    public class Customer
+    public class Customer : BaseEntity
     {
         public Address Address { get; set; }
 
@@ -12,8 +12,6 @@ namespace Marzhel.PentiaAssignment.Models
 
         [Required]
         public DateTime Created { get; set; }
-
-        public int CustomerId { get; set; }
 
         [Required]
         public string Name { get; set; }
