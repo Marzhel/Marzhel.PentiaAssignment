@@ -55,7 +55,6 @@ namespace Marzhel.PentiaAssignment.Controllers
         public async Task<ActionResult> BySalesPersonName(string salesPersonName)
         {
             if (salesPersonName == null) { return View(); }
-
             var customers = await _customerService.GetBySalesPersonNameAsync(salesPersonName);
 
             return View(customers);
@@ -64,7 +63,6 @@ namespace Marzhel.PentiaAssignment.Controllers
         public async Task<ActionResult> Details(int? id)
         {
             if (!id.HasValue) { return RedirectToAction(nameof(Index)); }
-
             var customer = await _customerService.GetAsync(id.Value);
 
             return View(customer);
