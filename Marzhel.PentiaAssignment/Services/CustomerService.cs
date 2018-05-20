@@ -35,47 +35,40 @@ namespace Marzhel.PentiaAssignment.Services
 
         public async Task<ICollection<Customer>> GetByStreetAsync(string street)
         {
-            var query = from customer in _salesContext.Customers
-                        where customer.Address.Line1 == street
-                        select customer;
-
-            return await query.ToListAsync();
+            return await _salesContext.Customers
+                .Where(customer => customer.Address.Line1 == street)
+                .ToListAsync();
         }
 
         public async Task<ICollection<Customer>> GetByCarMakeAsync(string carMake)
         {
-            var query = from purchase in _salesContext.CarPurchases
-                        where purchase.Car.Make == carMake
-                        select purchase.Customer;
-
-            return await query.ToListAsync();
+            return await _salesContext.CarPurchases
+                .Where(purchase => purchase.Car.Make == carMake)
+                .Select(purchase => purchase.Customer)
+                .ToListAsync();
         }
 
         public async Task<ICollection<Customer>> GetByCarModelAsync(string carModel)
         {
-            var query = from purchase in _salesContext.CarPurchases
-                        where purchase.Car.Model == carModel
-                        select purchase.Customer;
-
-            return await query.ToListAsync();
+            return await _salesContext.CarPurchases
+                .Where(purchase => purchase.Car.Model == carModel)
+                .Select(purchase => purchase.Customer)
+                .ToListAsync();
         }
 
         public async Task<ICollection<Customer>> GetByNameAsync(string name)
         {
-            var query = from customer in _salesContext.Customers
-                        where customer.Name == name
-                        select customer;
-
-            return await query.ToListAsync();
+            return await _salesContext.Customers
+                .Where(customer => customer.Name == name)
+                .ToListAsync();
         }
 
         public async Task<ICollection<Customer>> GetBySalesPersonNameAsync(string salesPersonName)
         {
-            var query = from purchase in _salesContext.CarPurchases
-                        where purchase.SalesPerson.Name == salesPersonName
-                        select purchase.Customer;
-
-            return await query.ToListAsync();
+            return await _salesContext.CarPurchases
+                .Where(purchase => purchase.SalesPerson.Name == salesPersonName)
+                .Select(purchase => purchase.Customer)
+                .ToListAsync();
         }
     }
 }
