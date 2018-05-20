@@ -24,9 +24,11 @@ namespace Marzhel.PentiaAssignment.Controllers
             return View(customers);
         }
 
-        public async Task<ActionResult> Details(int id)
+        public async Task<ActionResult> Details(int? id)
         {
-            var customer = await _customerService.GetAsync(id);
+            if (!id.HasValue) { return RedirectToAction(nameof(Index)); }
+
+            var customer = await _customerService.GetAsync(id.Value);
 
             return View(customer);
         }
