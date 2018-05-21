@@ -45,6 +45,7 @@ namespace Marzhel.PentiaAssignment.Repositories
             return await _salesContext.CarPurchases
                 .Where(purchase => purchase.Car.Make == carMake)
                 .Select(purchase => purchase.Customer)
+                .Distinct()
                 .ToListAsync();
         }
 
@@ -53,6 +54,7 @@ namespace Marzhel.PentiaAssignment.Repositories
             return await _salesContext.CarPurchases
                 .Where(purchase => purchase.Car.Model == carModel)
                 .Select(purchase => purchase.Customer)
+                .Distinct()
                 .ToListAsync();
         }
 
@@ -68,6 +70,7 @@ namespace Marzhel.PentiaAssignment.Repositories
             return await _salesContext.CarPurchases
                 .Where(purchase => purchase.SalesPerson.Name == salesPersonName)
                 .Select(purchase => purchase.Customer)
+                .Distinct()
                 .ToListAsync();
         }
     }
