@@ -2,9 +2,9 @@
 using System.Threading.Tasks;
 using Marzhel.PentiaAssignment.Models;
 
-namespace Marzhel.PentiaAssignment.Services
+namespace Marzhel.PentiaAssignment.Repositories
 {
-    public interface ICustomerService
+    public interface ICustomerRepository
     {
         Task<ICollection<Customer>> GetAsync();
 

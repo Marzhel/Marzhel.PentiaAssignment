@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 using Marzhel.PentiaAssignment.Contexts;
 using Marzhel.PentiaAssignment.Models;
 
-namespace Marzhel.PentiaAssignment.Services
+namespace Marzhel.PentiaAssignment.Repositories
 {
-    public class CustomerService : ICustomerService, IDisposable
+    public class CustomerRepository : ICustomerRepository, IDisposable
     {
         private readonly SalesContext _salesContext;
 
-        public CustomerService(IDbContextFactory<SalesContext> salesContextFactory)
+        public CustomerRepository(IDbContextFactory<SalesContext> salesContextFactory)
         {
             _salesContext = salesContextFactory.Create();
         }

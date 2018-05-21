@@ -1,8 +1,7 @@
 using System;
-using System.Configuration;
 using System.Data.Entity.Infrastructure;
 using Marzhel.PentiaAssignment.Contexts;
-using Marzhel.PentiaAssignment.Services;
+using Marzhel.PentiaAssignment.Repositories;
 using Unity;
 using Unity.AspNet.Mvc;
 
@@ -44,7 +43,7 @@ namespace Marzhel.PentiaAssignment
             // NOTE: To load from web.config uncomment the line below. Make sure to add a
             // Unity.Configuration to the using statements. container.LoadConfiguration();
 
-            container.RegisterType<ICustomerService, CustomerService>(new PerRequestLifetimeManager());
+            container.RegisterType<ICustomerRepository, CustomerRepository>(new PerRequestLifetimeManager());
 
             container.RegisterType<IDbContextFactory<SalesContext>, SalesContextFactory>();
         }
