@@ -5,6 +5,13 @@ namespace Marzhel.PentiaAssignment.Contexts
 {
     public class SalesContext : DbContext
     {
+        // The static consturctor is used to set the initializer for the sales context. This will
+        // populate the database with some test data.
+        static SalesContext()
+        {
+            Database.SetInitializer(new SalesContextInitializer());
+        }
+
         public SalesContext(string nameOrConnectionString) : base(nameOrConnectionString)
         {
         }

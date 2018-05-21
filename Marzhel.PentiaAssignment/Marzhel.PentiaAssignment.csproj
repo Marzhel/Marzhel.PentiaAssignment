@@ -162,6 +162,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
+    <Compile Include="Contexts\SalesContextInitializer.cs" />
     <Compile Include="Contexts\SalesContext.cs" />
     <Compile Include="Contexts\SalesContextFactory.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
